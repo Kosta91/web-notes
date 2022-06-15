@@ -2,11 +2,12 @@
 
 IMG_NAME=${DOCKER_REGISTRY}bluedata/web-notes
 IMG_VER=2.0
+PUSHIMAGE=${PUSHIMAGE:-false}
 
 if [ ! $(docker image list | grep "${IMG_NAME}" | grep "${IMG_VER}") ] ; then
     docker build -t ${IMG_NAME}:${IMG_VER} .
     
-    if ${DOCKER_REGISTRY} ; then
+    if [ $PUSHIMAGE = "true" ] ; then
         docker push ${IMG_NAME}:${IMG_VER}
     fi
 fi   
