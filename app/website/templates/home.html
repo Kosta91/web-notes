@@ -1,6 +1,12 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
 %}
-<h1 align="center">Notes</h1>
+<h1 align="center">
+  <span style="color:#FF0000">N</span>
+  <span style="color:#CCFF00">O</span>
+  <span style="color:#00FF66">T</span>
+  <span style="color:#0066FF">E</span>
+  <span style="color:#CC00FF">S</span>
+</h1>
 <ul class="list-group list-group-flush" id="notes">
   {% for note in user.notes %}
   <li class="list-group-item">
