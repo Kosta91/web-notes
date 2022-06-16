@@ -1,16 +1,17 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from os import path, makedirs
+from os import makedirs, path
 from flask_login import LoginManager
 
 db = SQLAlchemy()
+DB_DIR="/usr/web-notes/v2.0-database"
 DB_NAME = "database.db"
 
 
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'hjshjhdjah kjshkjdhjs'
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///database/{DB_NAME}'
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_DIR}/{DB_NAME}'
     db.init_app(app)
 
     from .views import views
@@ -35,7 +36,7 @@ def create_app():
 
 
 def create_database(app):
-    if not path.exists('website/database' + DB_NAME):
-        makedirs('website/database', exist_ok=True)
+    if not path.exists(f'{DB_DIR}/{DB_NAME}'):
+        makedirs(DB_DIR, exist_ok=True)
         db.create_all(app=app)
         print('Created Database!')
