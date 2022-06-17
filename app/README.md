@@ -14,10 +14,13 @@ pip install -r requirements.txt
 
 ## Running The App
 
+Set env variable WEB_NOTES_PORT if required
+By default WEB_NOTES_PORT=10000
+
 ```bash
 python main.py
 ```
 
 ## Viewing The App
 
-Go to `http://127.0.0.1:5000`
+Go to `http://127.0.0.1:{WEB_NOTES_PORT}`
