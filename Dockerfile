@@ -3,6 +3,7 @@ FROM docker.io/bluedata/ubuntu18.04:1.2
 RUN apt upgrade -y && apt update -y
 RUN apt -y install python3-pip
 
+RUN mkdir -p /data/web-notes-2.0
 COPY ./configscripts/appconfig.tgz /opt/configscripts/appconfig.tgz
 COPY ./app /home/web-notes
 WORKDIR /home/web-notes

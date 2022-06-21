@@ -37,6 +37,5 @@ def create_app():
 
 def create_database(app):
     if not path.exists(f'{DB_DIR}/{DB_NAME}'):
-        makedirs(DB_DIR, exist_ok=True)
         db.create_all(app=app)
         print('Created Database!')
