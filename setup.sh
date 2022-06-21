@@ -9,5 +9,3 @@ docker build -t ${IMG_NAME}:${IMG_VER} .
 if [ $PUSHIMAGE = "true" ] ; then
     docker push ${IMG_NAME}:${IMG_VER}
 fi
-
-docker run -it -p 5000:5000 ${IMG_NAME}:${IMG_VER}
