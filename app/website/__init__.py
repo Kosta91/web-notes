@@ -4,8 +4,8 @@ from os import makedirs, path
 from flask_login import LoginManager
 
 db = SQLAlchemy()
-DB_DIR="/data/web-notes-2.0"
-DB_NAME = "database.db"
+DB_DIR="/data"
+DB_NAME = "web-notes-2.0.db"
 
 
 def create_app():

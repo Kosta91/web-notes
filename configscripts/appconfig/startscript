@@ -32,7 +32,7 @@ elif [[ "$1" == "--configure" ]]; then
     log "Starting configuration ... "
 elif [[ "$1" == "--pod_upgraded" ]]; then
     log "Pod upgraded, moving data to new data folder"
-    mv /data/web-notes-1.0/* /data/web-notes-2.0/
+    mv /data/web-notes-1.0.db /data/web-notes-2.0.db
 else
     echo "ERROR: Unknown command line option(s): '$@'"
     exit 10
