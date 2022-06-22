@@ -4,7 +4,7 @@ IMG_NAME=${DOCKER_REGISTRY}bluedata/web-notes
 IMG_VER=1.0
 PUSHIMAGE=${PUSHIMAGE:-false}
 
-tar -czvf configscripts/appconfig.tgz configscripts/appconfig > /dev/null
+(cd configscripts ; tar -czvf appconfig.tgz appconfig > /dev/null)
 
 docker build -t ${IMG_NAME}:${IMG_VER} .
 
