@@ -4,7 +4,7 @@ from os import makedirs, path
 from flask_login import LoginManager
 
 db = SQLAlchemy()
-DB_DIR="/data/web-notes"
+DB_DIR="/home/data"
 DB_NAME = "database.db"
 
 
