@@ -4,7 +4,7 @@ RUN apt upgrade -y && apt update -y
 RUN apt -y install python3-pip
 RUN apt install curl -y
 
-RUN mkdir -p /home/data
+RUN mkdir -p /usr/data/web-notes
 
 COPY ./configscripts/appconfig.tgz /opt/configscripts/appconfig.tgz
 COPY ./app /home/web-notes

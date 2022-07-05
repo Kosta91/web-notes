@@ -29,9 +29,14 @@ elif [[ "$1" == "--delnodes" ]]; then
     exit 0
 elif [[ "$1" == "--configure" ]]; then
     log "Starting configuration ... "
+    exit 0
 elif [[ "$1" == "--pod_upgraded" ]]; then
     log "Pod upgraded, moving data to new data folder"
-    mv /data/web-notes/database.db /home/data/database.db
+    mv /data/web-notes/database.db /usr/data/web-notes/database.db
+    exit 0
+elif [[ "$1" == "--pod_reverted" ]]; then
+    log "Pod successfully rolled back"
+    exit 0
 else
     echo "ERROR: Unknown command line option(s): '$@'"
     exit 10
