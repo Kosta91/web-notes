@@ -2,7 +2,7 @@
 
 IMG_NAME=${DOCKER_REGISTRY}bluedata/web-notes
 IMG_VER=1.0
-PUSHIMAGE=${PUSHIMAGE:-false}
+PUSHIMAGE=${PUSHIMAGE:-true}
 
 (cd configscripts ; tar -czvf appconfig.tgz appconfig > /dev/null)
 
